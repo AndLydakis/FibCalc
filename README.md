@@ -1,4 +1,4 @@
-# Extremely Overengineered Fibonacci Sequence Calculator
+# Multi-Docker Fibonacci Sequence Calculator
 
 [![Build Status](https://travis-ci.org/AndLydakis/FibCalc.svg?branch=master)](https://travis-ci.org/AndLydakis/FibCalc)
 
