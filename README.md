@@ -1,5 +1,7 @@
 # Extremely Overengineered Fibonacci Sequence Calculator
 
+[![Build Status](https://travis-ci.org/AndLydakis/FibCalc.svg?branch=master)](https://travis-ci.org/AndLydakis/FibCalc)
+
 Part of [this course](https://github.com/AndLydakis/DockerK8s)
 
 * React/Express App
