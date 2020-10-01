@@ -19,7 +19,7 @@ Part of [this course](https://github.com/AndLydakis/DockerK8s)
 
 To create client React app:
     * npx create-react-app client
-    * delete auto created ```.git``` repo
+    * delete auto created ```.git``` repo.
     
 ###Travis workflow:
 ![Travis Workflow](resources/travis_flow.jpg)
