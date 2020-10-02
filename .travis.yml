@@ -4,20 +4,21 @@ services:
     - docker
 # build
 before_install:
-    - docker build -t andreas/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t "$DOCKER_ID"/react-test -f ./client/Dockerfile.dev ./client
 # run tests
 script:
-    - docker run -e CI=true andreas/react-test npm test
-# build production images
+    - docker run -e CI=true "$DOCKER_ID"/react-test npm test
+
 after_success:
-    - docker build -t andreas/fib-client ./client
-    - docker build -t andreas/fig-nginx ./nginx
-    - docker build -t andreas/fib-server ./server
-    - docker build -t andreas/fib-worker ./worker
     # Login to docker CLI
-    - echo "$DOCKER_PASSWORD" | docker login  -u "$DOCKER_ID"
+    - docker login  -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
+    # build production images
+    - docker build -t "$DOCKER_ID"/fib-client ./client
+    - docker build -t "$DOCKER_ID"/fib-nginx ./nginx
+    - docker build -t "$DOCKER_ID"/fib-server ./server
+    - docker build -t "$DOCKER_ID"/fib-worker ./worker
     # push images to docker-hub
-    - docker push andreas/fib-client
-    - docker push andreas/fib-nginx
-    - docker push andreas/fib-server
-    - docker push andreas/fib-worker
+    - docker push "$DOCKER_ID"/fib-client
+    - docker push "$DOCKER_ID"/fib-nginx
+    - docker push "$DOCKER_ID"/fib-server
+    - docker push "$DOCKER_ID"/fib-worker
