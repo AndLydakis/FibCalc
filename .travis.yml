@@ -22,3 +22,18 @@ after_success:
     - docker push "$DOCKER_ID"/fib-nginx
     - docker push "$DOCKER_ID"/fib-server
     - docker push "$DOCKER_ID"/fib-worker
+
+# notify EBS to pull and deploy images
+# this means sending Dockerrun.aws.json
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: multi-docker
+    env: MultiDocker-env
+    bucket_name: elasticbeanstalk-us-east-2-939066603867
+    backet_path: docker-multi
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
