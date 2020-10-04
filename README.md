@@ -19,13 +19,7 @@ Part of [this course](https://github.com/AndLydakis/DockerK8s)
 
 ### End Deployed Structure
 
-![End Structure](resources/aws_struct.jpg)  
-
-![End Structure_1](resources/aws_struct_1.jpg)  
-
-![End Structure_2](resources/aws_struct_2.jpg)  
-
-![VPCs](resources/vpc.jpg)  
+![Deployed](resources/k8s_deploy.jpg) 
 
 To create client React app:
     * npx create-react-app client
