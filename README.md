@@ -33,11 +33,25 @@ Part of [this course](https://github.com/AndLydakis/DockerK8s)
 ![volumes_1](resources/k8s_volumes_1.jpg)   
 
 ![volumes_2](resources/k8s_volumes_4.jpg)   
+
 If the pod is destroyed the volume is destroyed
 
 ![volumes_3](resources/k8s_volumes_3.jpg)  
     
 ### Don't have multiple postgres containers accessing the same volume by incrementing ```replicas```  
+
+# Ingress Controller
+* routing rules to get traffic to services  
+
+![ingress_1](resources/k8s_ingress_1.jpg)
+
+![ingress_2](resources/k8s_ingress_2.jpg)
+
+![load_balancing](resources/k8s_load_bal.jpg)
+
+### This project uses [ingress-nginx](https://github.com/kubernetes/ingress-nginx)  
+
+#### After Deployment go to Google cloud dashboard -> Clusters -> Services  
 
 ### Travis workflow:
 ![Travis Workflow](resources/travis_flow.jpg)
